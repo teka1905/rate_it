@@ -1,83 +1,176 @@
-html, body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    margin: 0;
-    min-height: 180px;
-    padding: 0;
-    width: 380px;
-    }
-    h1 {
-        font-family: 'Menlo', monospace;
-        font-size: 22px;
-        font-weight: 400;
-        margin: 0;
-        color: #2f5876;
-    }
-    h2 {
-        font-size: 18px;
-        font-weight: 400;
-        margin-bottom: 4px;
-    }
-    img {
-        width: 30px;
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap");
 
+body {
+    background: #224249;
+    font-family: "Raleway", sans-serif;
+}
+
+/* Главный заголовок расширения */
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Всё наполнение расширения */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*===================== Переключение табов ================================*/
+/* Переключатели табов - Лейбл раздела */
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 2px 2px;
+    background: #000;
+    display: inline-block;
+    color: #fff;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+.tab-bug {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 2px 2px;
+    background: brown;
+    display: inline-block;
+    color: #fff;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+
+/* Логика переключателей табов */
+.radio {
+    display: none;
+}
+
+#zero:checked ~ .panels #panel-0,
+#one:checked ~ .panels #panel-1,
+#two:checked ~ .panels #panel-2,
+#three:checked ~ .panels #panel-3,
+#four:checked ~ .panels #panel-4,
+#five:checked ~ .panels #panel-5,
+#six:checked ~ .panels #panel-6 {
+    display: block;
+}
+
+#zero:checked ~ .tabs #tab-0 {
+    background: #B76C5FFF;
+    color: #000;
+}
+
+#one:checked ~ .tabs #tab-1,
+#two:checked ~ .tabs #tab-2,
+#three:checked ~ .tabs #tab-3,
+#four:checked ~ .tabs #tab-4,
+#five:checked ~ .tabs #tab-5,
+#six:checked ~ .tabs #tab-6 {
+    background: #fffffff6;
+    color: #000;
+}
+
+#zero:checked ~ .result #total-0,
+#one:checked ~ .result #total-1,
+#two:checked ~ .result #total-2,
+#three:checked ~ .result #total-3,
+#four:checked ~ .result #total-4,
+#five:checked ~ .result #total-5,
+#six:checked ~ .result #total-6 {
+    display: block;
+}
+
+/*=================== Разделы и их наполнение =============================*/
+/* Общие свойства разделов */
+.panels {
+    background: #fffffff6;
+    box-shadow: 0 2rem 2rem #00000080;
+    min-height: 200px;
+    width: 90%;
+    /*   max-width:887px; */
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Постепенное появление контента */
+@keyframes fadein {
+    from {
+        opacity: 0;
     }
-    .modal-header {
-        align-items: center;
-        border-bottom: 0.5px solid #dadada;
-        height: 50px;
+    to {
+        opacity: 1;
     }
-    form {
-        align-items: center;
-        padding: 16px;
-        clear: left;
-    }
-    .logo {
-        padding: 16px;
-        float: left;
-    }
-    .logo-icon {
-        vertical-align: text-bottom;
-        margin-right: 12px;
-    }
-    .version {
-        color: #444;
-        font-size: 18px;
-    }
-    #total {
-        font-family: 'Menlo', monospace;
-        font-size: 50px;
-        font-weight: 400;
-        margin: 0;
-        color: #2f5876;
-        text-align: center;
-        cursor: pointer;
-    }
-    #total:hover {
-        font-family: 'Menlo', monospace;
-        font-size: 50px;
-        font-weight: 400;
-        margin: 0;
-        color: #2f7876;
-        text-align: center;
-        cursor: pointer;
-    }
-    select {
-        padding-left: 10px;
-        align-items: center;
-        height: 25px;
-        width: 320px;
-        font-size: 15px;
-    }
-    .description {
-        color: #444444;
-        font-size: 10px;
-        padding-bottom: 0;
-    }
-    #copyText {
-        color: #444444;
-        font-size: 10px;
-        padding-bottom: 0;
-        text-align: center;
-        margin-top: 0;
-    }
+}
+
+/* Наполнение конкретного раздела */
+.panel {
+    display: none;
+    animation: fadein 0.8s;
+    text-align: left;
+}
+
+
+/* Заголовок раздела */
+.panel-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/*======================= Критерии оценки =================================*/
+/* Заголовок критерия оценки */
+.panel-subtitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+/* Подзаголовок критерия оценки */
+.note {
+    color: #444444;
+    font-size: 12px;
+    padding-bottom: 0;
+}
+
+/*====================== Итоговая оценка ==================================*/
+/* Итоговый вес - контейнер */
+.result {
+    background: #fffffff6;
+    box-shadow: 0 2rem 2rem #00000080;
+    width: 90%;
+    /*   max-width:887px; */
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+    padding: 10px 20px;
+    margin-top: -10px;
+    border-top: 2px solid #000;
+}
+
+/* Итоговый вес - заголовок */
+.result-title {
+    animation: fadein 0.8s;
+    font-size: 1.5em;
+    font-weight: bold;
+    float: left;
+    margin-top: 18px;
+    margin-left: 20px;
+}
+
+/* Итоговый вес - значение */
+.total {
+    display: none;
+    animation: fadein 0.8s;
+    font-family: monospace;
+    font-size: 50px;
+    font-weight: 400;
+    margin: 0;
+    color: #224249;
+    text-align: center;
+    /*   cursor: pointer; */
+}
+
+/*=========================================================================*/
