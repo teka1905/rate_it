@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap");
 
 body {
-    background: #224249;
+    background: #E4EFFB;
     font-family: "Raleway", sans-serif;
 }
 
@@ -25,7 +25,7 @@ h1 {
     cursor: pointer;
     padding: 10px 20px;
     margin: 2px 2px;
-    background: #000;
+    background: #224A77;
     display: inline-block;
     color: #fff;
     border-radius: 10px 10px 10px 10px;
@@ -35,7 +35,7 @@ h1 {
     cursor: pointer;
     padding: 10px 20px;
     margin: 2px 2px;
-    background: brown;
+    background: #C32F12;
     display: inline-block;
     color: #fff;
     border-radius: 10px 10px 10px 10px;
@@ -58,7 +58,7 @@ h1 {
 }
 
 #zero:checked ~ .tabs #tab-0 {
-    background: #B76C5FFF;
+    background: #FF8168;
     color: #000;
 }
 
@@ -68,7 +68,7 @@ h1 {
 #four:checked ~ .tabs #tab-4,
 #five:checked ~ .tabs #tab-5,
 #six:checked ~ .tabs #tab-6 {
-    background: #fffffff6;
+    background: #C6DDF4;
     color: #000;
 }
 
